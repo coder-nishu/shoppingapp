@@ -51,6 +51,7 @@
 //     isPasswordVisible ? isChecking?.change(true) : isHandsUp?.change(true);
 //   }
 
+
 //   void togglePasswordVisibility() {
 //     isPasswordVisible = !isPasswordVisible;
 
@@ -128,7 +129,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:rive/rive.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:toastification/toastification.dart';
 
@@ -141,69 +141,69 @@ class SignUpProvider extends ChangeNotifier {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  SMIInput<bool>? isChecking;
-  SMIInput<bool>? isHandsUp;
-  SMIInput<bool>? trigSuccess;
-  SMIInput<bool>? trigFail;
-  SMINumber? numLook;
-  StateMachineController? stateMachineController;
+  // SMIInput<bool>? isChecking;
+  // SMIInput<bool>? isHandsUp;
+  // SMIInput<bool>? trigSuccess;
+  // SMIInput<bool>? trigFail;
+  // SMINumber? numLook;
+  // StateMachineController? stateMachineController;
 
   bool isPasswordVisible = false;
 
-  void initializeRive(Artboard artBoard) {
-    stateMachineController = StateMachineController.fromArtboard(
-      artBoard,
-      "Login Machine",
-    );
-    if (stateMachineController == null) return;
-    artBoard.addController(stateMachineController!);
+  // void initializeRive(Artboard artBoard) {
+  //   stateMachineController = StateMachineController.fromArtboard(
+  //     artBoard,
+  //     "Login Machine",
+  //   );
+  //   if (stateMachineController == null) return;
+  //   artBoard.addController(stateMachineController!);
+  //
+  //   isChecking = stateMachineController?.findInput("isChecking");
+    // isHandsUp = stateMachineController?.findInput("isHandsUp");
+  //   trigSuccess = stateMachineController?.findInput("trigSuccess");
+  //   trigFail = stateMachineController?.findInput("trigFail");
+  //   numLook = stateMachineController?.findSMI("numLook");
+  // }
 
-    isChecking = stateMachineController?.findInput("isChecking");
-    isHandsUp = stateMachineController?.findInput("isHandsUp");
-    trigSuccess = stateMachineController?.findInput("trigSuccess");
-    trigFail = stateMachineController?.findInput("trigFail");
-    numLook = stateMachineController?.findSMI("numLook");
-  }
+  // void isCheckField() {
+  //   isHandsUp?.change(false);
+  //   isChecking?.change(true);
+  //   numLook?.change(0);
+  // }
 
-  void isCheckField() {
-    isHandsUp?.change(false);
-    isChecking?.change(true);
-    numLook?.change(0);
-  }
+  // void moveEyeBall(String val) {
+  //   numLook?.change(val.length.toDouble());
+  // }
 
-  void moveEyeBall(String val) {
-    numLook?.change(val.length.toDouble());
-  }
-
-  void hidePassword() {
-    isPasswordVisible ? isChecking?.change(true) : isHandsUp?.change(true);
-  }
+  // void hidePassword() {
+  //   isPasswordVisible ? isChecking?.change(true) : isHandsUp?.change(true);
+  // }
 
   void togglePasswordVisibility() {
     isPasswordVisible = !isPasswordVisible;
 
-    if (isPasswordVisible) {
-      isChecking?.change(true);
-      isHandsUp?.change(false);
-    } else {
-      isChecking?.change(false);
-      isHandsUp?.change(true);
-    }
+    // if (isPasswordVisible) {
+    //   isChecking?.change(true);
+    //   isHandsUp?.change(false);
+    // } else {
+    //   isChecking?.change(false);
+    //   isHandsUp?.change(true);
+    // }
 
     notifyListeners();
   }
 
   Future<void> signUpWithEmail(BuildContext context) async {
     if (!formKey.currentState!.validate()) {
-      trigFail?.change(true);
+      // trigFail?.change(true);
       return;
     }
 
     try {
-      isChecking?.change(true);
-      isHandsUp?.change(false);
-      trigSuccess?.change(false);
-      trigFail?.change(false);
+      // isChecking?.change(true);
+      // isHandsUp?.change(false);
+      // trigSuccess?.change(false);
+      // trigFail?.change(false);
 
       final credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
@@ -225,7 +225,7 @@ class SignUpProvider extends ChangeNotifier {
           });
 
       // Trigger success animation
-      trigSuccess?.change(true);
+      // trigSuccess?.change(true);
 
       showToast(
         context,
@@ -255,10 +255,7 @@ class SignUpProvider extends ChangeNotifier {
         e.message ?? 'Signup failed',
         ToastificationType.error,
       );
-      trigFail?.change(true);
-    } finally {
-      isChecking?.change(false);
-      isHandsUp?.change(false);
+      // trigFail?.change(true);
     }
   }
 

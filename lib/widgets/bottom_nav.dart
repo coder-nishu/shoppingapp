@@ -16,31 +16,28 @@ class HBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 30),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        decoration: BoxDecoration(
-          color: backgroundColor2.withValues(alpha: 0.8),
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: backgroundColor2.withAlpha(100),
-              offset: Offset(0, 20),
-              blurRadius: 20,
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            buildNavItem(icon: Iconsax.home_1, index: 0),
-            buildNavItem(icon: Iconsax.heart, index: 1),
-            buildNavItem(icon: Iconsax.location, index: 2),
-            buildNavItem(icon: Iconsax.shopping_bag, index: 3),
-            buildNavItem(icon: Iconsax.user, index: 4),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 0),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      decoration: BoxDecoration(
+        color: backgroundColor2.withValues(alpha: 0.8),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.deepOrange,
+            offset: Offset(0, 20),
+            blurRadius: 20,
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          buildNavItem(icon: Iconsax.home_1, index: 0),
+          buildNavItem(icon: Iconsax.heart, index: 1),
+          buildNavItem(icon: Iconsax.shopping_bag, index: 2),
+          buildNavItem(icon: Iconsax.user, index: 3),
+        ],
       ),
     );
   }
@@ -60,7 +57,7 @@ class HBottomNavBar extends StatelessWidget {
         child: Icon(
           icon,
           size: 26,
-          color: isSelected ? Colors.teal : Colors.white70,
+          color: isSelected ? Colors.indigo : Colors.white70,
         ),
       ),
     );

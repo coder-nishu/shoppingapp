@@ -111,7 +111,7 @@ class ProductDetailPage extends StatelessWidget {
                                       border: Border.all(
                                         color:
                                             productProvider.currentPage == index
-                                                ? Colors.teal
+                                                ? Colors.deepOrange
                                                 : Colors.white,
                                         width: 2,
                                       ),

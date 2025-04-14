@@ -11,9 +11,9 @@ class HAnimatedButton extends StatelessWidget {
       builder: (context) {
         final GlobalKey<SlideActionState> key = GlobalKey();
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(6.0),
           child: SlideAction(
-            text: 'Pay',
+            text: 'Pay Now',
             textStyle: GoogleFonts.quicksand(
               fontSize: 22,
               fontWeight: FontWeight.w600,
@@ -21,7 +21,7 @@ class HAnimatedButton extends StatelessWidget {
             ),
             textColor: Colors.black,
             innerColor: Colors.white,
-            outerColor: Colors.teal,
+            outerColor: Colors.deepOrange,
             sliderButtonIcon: const Icon(
               Icons.arrow_forward,
               color: Colors.black,

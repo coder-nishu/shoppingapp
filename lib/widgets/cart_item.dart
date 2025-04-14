@@ -37,7 +37,7 @@ class CartItem extends StatelessWidget {
               ),
             ),
             child: Center(
-              child: Image.asset("assets/dog1.png", fit: BoxFit.cover),
+              child: Image.asset("assets/watch.jpg", fit: BoxFit.cover),
             ),
           ),
           const SizedBox(width: 16),
@@ -52,11 +52,11 @@ class CartItem extends StatelessWidget {
                   SizedBox(
                     width: 50,
                     child: Text(
-                      "\$5.0",
+                      "৳ 5000",
                       style: GoogleFonts.quicksand(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.teal,
+                        color: Colors.deepOrange,
                       ),
                     ),
                   ),
@@ -88,7 +88,7 @@ class CartItem extends StatelessWidget {
                             height: 30,
                             width: 30,
                             decoration: BoxDecoration(
-                              color: Colors.teal[100],
+                              color: Colors.deepOrange[100],
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Icon(Icons.add, size: 16),
@@ -113,7 +113,7 @@ class CartItem extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.5,
           child: Text(
-            "NutriNosh Dog Food",
+            "Rolex Watch silver black dial",
             style: GoogleFonts.quicksand(
               fontSize: 18,
               fontWeight: FontWeight.bold,

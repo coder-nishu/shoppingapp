@@ -31,12 +31,12 @@ class _HomePageState extends State<HomePage> {
             spacing: 16,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HHeading(title: 'Special Offers', isSeeAll: false),
+              HHeading(title: 'Flash Sales', isSeeAll: false),
               HCarousel(),
               HHeading(title: 'Categories', isSeeAll: false),
               const HCategory(),
               HHeading(
-                title: 'Best Sellers',
+                title: 'Flash Sales',
                 onPressed: () {
                   Navigator.pushNamed(context, AppRoutes.allProducts);
                 },

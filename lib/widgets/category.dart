@@ -13,10 +13,10 @@ class HCategory extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CategoryItem(imagePath: 'assets/dog.png', label: 'Dog'),
-            CategoryItem(imagePath: 'assets/cat.png', label: 'Cat'),
-            CategoryItem(imagePath: 'assets/bird.png', label: 'Bird'),
-            CategoryItem(imagePath: 'assets/fish.png', label: 'Fish'),
+            CategoryItem(imagePath: 'assets/shirt.png', label: 'Cloth'),
+            CategoryItem(imagePath: 'assets/watch.png', label: 'Watch'),
+            CategoryItem(imagePath: 'assets/headphn.png', label: 'Headphones'),
+            CategoryItem(imagePath: 'assets/gift.png', label: 'Gift'),
           ],
         ),
       ],
@@ -34,7 +34,7 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(8),
-      splashColor: Colors.teal.withAlpha(50),
+      splashColor: Colors.deepOrange.withAlpha(50),
       onTap: () {
         Navigator.pushNamed(context, AppRoutes.category, arguments: label);
       },
@@ -47,7 +47,7 @@ class CategoryItem extends StatelessWidget {
               imagePath,
               height: 38,
               fit: BoxFit.contain,
-              color: Colors.teal,
+              color: Colors.deepOrange,
             ),
           ),
           const SizedBox(height: 4),

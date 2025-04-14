@@ -26,13 +26,13 @@ class ProfilePage extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(color: Colors.teal),
+            child: CircularProgressIndicator(color: Colors.deepOrange),
           );
         } else if (snapshot.hasError) {
           return Center(
             child: Text(
               'Something went wrong',
-              style: GoogleFonts.quicksand(
+              style: GoogleFonts.montserrat(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.red[400],
@@ -54,7 +54,7 @@ class ProfilePage extends StatelessWidget {
                   Center(
                     child: Text(
                       'Change Your Profile Picture',
-                      style: GoogleFonts.quicksand(
+                      style: GoogleFonts.montserrat(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                         color: Colors.grey[600],
@@ -78,70 +78,11 @@ class ProfilePage extends StatelessWidget {
                   const SizedBox(height: 16),
                   ListTile(
                     contentPadding: EdgeInsets.zero,
-                    leading: Icon(Iconsax.code_1_copy),
-                    trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                    title: Text(
-                      'Promo Code',
-                      style: GoogleFonts.quicksand(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text(
-                              'Promo Code',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.quicksand(
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            content: HScratcher(),
-
-                            actions: [
-                              InkWell(
-                                onTap: () => Navigator.of(context).pop(),
-                                child: Container(
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    color: Colors.teal,
-                                    borderRadius: BorderRadius.circular(32),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Done',
-                                        style: GoogleFonts.quicksand(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    },
-                  ),
-
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
                     leading: Icon(Iconsax.logout_copy),
                     trailing: Icon(Icons.arrow_forward_ios, size: 16),
                     title: Text(
                       'Logout',
-                      style: GoogleFonts.quicksand(
+                      style: GoogleFonts.montserrat(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
@@ -195,7 +136,7 @@ class ProfilePage extends StatelessWidget {
             if (snapshot.hasError || !snapshot.hasData) {
               return Text(
                 'Failed to load user data',
-                style: GoogleFonts.quicksand(fontSize: 16),
+                style: GoogleFonts.montserrat(fontSize: 16),
               );
             }
 
@@ -212,7 +153,7 @@ class ProfilePage extends StatelessWidget {
                       width: 80,
                       child: Text(
                         'Name:',
-                        style: GoogleFonts.quicksand(
+                        style: GoogleFonts.montserrat(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: Colors.grey[600],
@@ -223,7 +164,7 @@ class ProfilePage extends StatelessWidget {
                       child: Text(
                         name,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.quicksand(
+                        style: GoogleFonts.montserrat(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
@@ -238,7 +179,7 @@ class ProfilePage extends StatelessWidget {
                       width: 80,
                       child: Text(
                         'Email:',
-                        style: GoogleFonts.quicksand(
+                        style: GoogleFonts.montserrat(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: Colors.grey[600],
@@ -249,7 +190,7 @@ class ProfilePage extends StatelessWidget {
                       child: Text(
                         email,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.quicksand(
+                        style: GoogleFonts.montserrat(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
@@ -268,7 +209,7 @@ class ProfilePage extends StatelessWidget {
               width: 80,
               child: Text(
                 'Address:',
-                style: GoogleFonts.quicksand(
+                style: GoogleFonts.montserrat(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: Colors.grey[600],
@@ -290,7 +231,7 @@ class ProfilePage extends StatelessWidget {
                     return Text(
                       'No address found',
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.quicksand(
+                      style: GoogleFonts.montserrat(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
@@ -300,7 +241,7 @@ class ProfilePage extends StatelessWidget {
                   return Text(
                     snapshot.data!,
                     overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.quicksand(
+                    style: GoogleFonts.montserrat(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
@@ -337,16 +278,16 @@ class ProfilePage extends StatelessWidget {
                             TextFormField(
                               controller: addressController,
                               style: const TextStyle(fontSize: 15),
-                              cursorColor: Colors.teal,
+                              cursorColor: Colors.deepOrange,
                               keyboardType: TextInputType.emailAddress,
                               textInputAction: TextInputAction.next,
                               decoration: InputDecoration(
                                 prefixIcon: const Icon(
                                   Iconsax.safe_home,
-                                  color: Colors.teal,
+                                  color: Colors.deepOrange,
                                 ),
                                 hintText: "Enter your delivery address",
-                                hintStyle: GoogleFonts.quicksand(
+                                hintStyle: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.w500,
                                 ),
                                 filled: true,
@@ -390,7 +331,7 @@ class ProfilePage extends StatelessWidget {
                                         children: [
                                           Text(
                                             'Cancel',
-                                            style: GoogleFonts.quicksand(
+                                            style: GoogleFonts.montserrat(
                                               color: Colors.black,
                                               fontSize: 18,
                                               fontWeight: FontWeight.w600,
@@ -416,7 +357,7 @@ class ProfilePage extends StatelessWidget {
                                         SnackBar(
                                           content: Text(
                                             'Address changed successfully',
-                                            style: GoogleFonts.quicksand(
+                                            style: GoogleFonts.montserrat(
                                               fontSize: 16,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -437,7 +378,7 @@ class ProfilePage extends StatelessWidget {
                                         children: [
                                           Text(
                                             'Save',
-                                            style: GoogleFonts.quicksand(
+                                            style: GoogleFonts.montserrat(
                                               color: Colors.white,
                                               fontSize: 18,
                                               fontWeight: FontWeight.w600,
@@ -468,10 +409,10 @@ class ProfilePage extends StatelessWidget {
                 ),
                 child: Text(
                   'CHANGE',
-                  style: GoogleFonts.quicksand(
+                  style: GoogleFonts.montserrat(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: Colors.teal,
+                    color: Colors.deepOrange,
                   ),
                 ),
               ),

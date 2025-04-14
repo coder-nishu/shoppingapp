@@ -24,9 +24,9 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
           Row(
             children: [
               Text(
-                'Welcome to PawMart',
+                'Shop Smart with EzzyShop',
                 style: GoogleFonts.quicksand(
-                  fontSize: 26,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -42,8 +42,8 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: Colors.grey.withAlpha(350),
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                    color: Colors.black.withAlpha(350),
+                    // borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),
                   child: Icon(
                     FontAwesomeIcons.bell,
@@ -62,7 +62,7 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'Search...',
+                hintText: 'Search your daily accesories',
                 hintStyle: GoogleFonts.quicksand(
                   fontWeight: FontWeight.w600,
                   color: Colors.grey,
@@ -70,9 +70,9 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 prefixIcon: Icon(
                   FontAwesomeIcons.magnifyingGlass,
-                  color: Colors.teal[400],
+                  color: Colors.deepOrange,
                 ),
-                suffixIcon: Icon(Icons.tune, color: Colors.teal),
+                suffixIcon: Icon(Icons.tune, color: Colors.deepOrange),
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.symmetric(
                   vertical: 12,
@@ -84,7 +84,7 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget {
           const SizedBox(height: 16),
         ],
       ),
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.deepOrange,
     );
   }
 

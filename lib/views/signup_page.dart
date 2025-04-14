@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:rive/rive.dart';
 
 import '../providers/signup_provider.dart';
 import '../widgets/appbar_text.dart';
@@ -26,28 +25,13 @@ class RiveSignUpPage extends StatelessWidget {
             children: [
               SizedBox(
                 height: 300,
-                child: RiveAnimation.asset(
-                  "assets/animated_login_character.riv",
-                  stateMachines: const ["SignUp Machine"],
-                  onInit: signUpProvider.initializeRive,
-                ),
+                child:
+                  Image.asset("assets/logo.jpg")
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: Container(
                   alignment: Alignment.center,
-                  width: 400,
-                  decoration: BoxDecoration(
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black38,
-                        spreadRadius: 10,
-                        blurRadius: 10,
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 15,
@@ -58,8 +42,8 @@ class RiveSignUpPage extends StatelessWidget {
                       child: Column(
                         children: [
                           buildTextField(
-                            onChange: signUpProvider.moveEyeBall,
-                            onTap: signUpProvider.isCheckField,
+                            // onChange: signUpProvider.moveEyeBall,
+                            // onTap: signUpProvider.isCheckField,
                             textInputAction: TextInputAction.next,
                             keyboardType: TextInputType.name,
                             controller: signUpProvider.usernameController,
@@ -74,8 +58,8 @@ class RiveSignUpPage extends StatelessWidget {
                           ),
                           const SizedBox(height: 15),
                           buildTextField(
-                            onChange: signUpProvider.moveEyeBall,
-                            onTap: signUpProvider.isCheckField,
+                            // onChange: signUpProvider.moveEyeBall,
+                            // onTap: signUpProvider.isCheckField,
                             textInputAction: TextInputAction.next,
                             keyboardType: TextInputType.emailAddress,
                             controller: signUpProvider.emailController,
@@ -91,8 +75,8 @@ class RiveSignUpPage extends StatelessWidget {
 
                           const SizedBox(height: 15),
                           buildTextField(
-                            onChange: signUpProvider.moveEyeBall,
-                            onTap: signUpProvider.hidePassword,
+                            // onChange: signUpProvider.moveEyeBall,
+                            // onTap: signUpProvider.hidePassword,
                             textInputAction: TextInputAction.done,
                             keyboardType: TextInputType.visiblePassword,
                             controller: signUpProvider.passwordController,
@@ -120,7 +104,7 @@ class RiveSignUpPage extends StatelessWidget {
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color: Colors.teal,
+                              color: Colors.deepOrange,
                             ),
                             child: InkWell(
                               onTap:
@@ -161,7 +145,7 @@ class RiveSignUpPage extends StatelessWidget {
                       "Login",
                       style: GoogleFonts.quicksand(
                         fontSize: 16,
-                        color: Colors.teal,
+                        color: Colors.deepOrange,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -179,8 +163,8 @@ class RiveSignUpPage extends StatelessWidget {
     required TextEditingController controller,
     required String hintText,
     required IconData icon,
-    required Function()? onTap,
-    required Function(String)? onChange,
+    Function()? onTap,
+    // required Function(String)? onChange,
     bool obscureText = false,
     Widget? suffixIcon,
     String? Function(String?)? validator,
@@ -190,22 +174,22 @@ class RiveSignUpPage extends StatelessWidget {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
-      cursorColor: Colors.teal,
+      cursorColor: Colors.deepOrange,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
       onTap: onTap,
-      onChanged: onChange,
+      // onChanged: onChange,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: GoogleFonts.quicksand(fontWeight: FontWeight.w500),
-        prefixIcon: Icon(icon, color: Colors.teal),
+        prefixIcon: Icon(icon, color: Colors.deepOrange),
         suffixIcon: suffixIcon,
         filled: true,
         fillColor: Colors.grey[200],
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-        focusColor: Colors.teal,
+        focusColor: Colors.deepOrange,
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.teal),
+          borderSide: const BorderSide(color: Colors.deepOrange),
           borderRadius: BorderRadius.circular(15),
         ),
       ),

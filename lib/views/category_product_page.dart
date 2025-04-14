@@ -18,7 +18,7 @@ class CategoryProductsPage extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(color: Colors.teal),
+              child: CircularProgressIndicator(color: Colors.deepOrange),
             );
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));

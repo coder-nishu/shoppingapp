@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:rive/rive.dart';
-
 import '../providers/login_provider.dart';
 import '../routers/app_routers.dart';
 import '../widgets/appbar_text.dart';
@@ -24,159 +22,141 @@ class RiveLoginPage extends StatelessWidget {
             children: [
               SizedBox(
                 height: 300,
-                child: RiveAnimation.asset(
-                  "assets/animated_login_character.riv",
-                  stateMachines: const ["Login Machine"],
-                  onInit: loginProvider.initializeRive,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                  alignment: Alignment.center,
-                  width: 400,
-                  decoration: BoxDecoration(
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black38,
-                        spreadRadius: 10,
-                        blurRadius: 10,
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                      vertical: 20,
-                    ),
-                    child: Form(
-                      key: loginProvider.formKey,
-                      child: Column(
-                        children: [
-                          TextFormField(
-                            onChanged: loginProvider.moveEyeBall,
-                            onTap: loginProvider.isCheckField,
-                            controller: loginProvider.emailController,
-                            style: const TextStyle(fontSize: 15),
-                            cursorColor: Colors.teal,
-                            keyboardType: TextInputType.emailAddress,
-                            textInputAction: TextInputAction.next,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(
-                                Icons.mail_rounded,
-                                color: Colors.teal,
-                              ),
-                              hintText: "Email",
-                              hintStyle: GoogleFonts.quicksand(
-                                fontWeight: FontWeight.w500,
-                              ),
-                              filled: true,
-                              fillColor: Colors.grey[200],
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              focusColor: Colors.teal,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Colors.teal,
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return "Please enter a valid email";
-                              }
-                              return null;
-                            },
-                          ),
-                          const SizedBox(height: 20),
-                          TextFormField(
-                            onTap: loginProvider.hidePassword,
-                            controller: loginProvider.passwordController,
-                            obscureText: !loginProvider.isPasswordVisible,
-                            style: const TextStyle(fontSize: 15),
-                            cursorColor: Colors.teal,
-                            textInputAction: TextInputAction.done,
+                child:
+                Image.asset("assets/logo.jpg",fit: BoxFit.contain),
 
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(
-                                Iconsax.lock,
-                                color: Colors.teal,
-                              ),
-                              hintText: "Password",
-                              hintStyle: GoogleFonts.quicksand(
-                                fontWeight: FontWeight.w500,
-                              ),
-                              filled: true,
-                              fillColor: Colors.grey[200],
-                              suffixIcon: IconButton(
-                                onPressed:
-                                    loginProvider.togglePasswordVisibility,
-                                icon:
-                                    loginProvider.isPasswordVisible
-                                        ? const Icon(Iconsax.eye)
-                                        : const Icon(Iconsax.eye_slash),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              focusColor: Colors.teal,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Colors.teal,
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 20,
+                  ),
+                  child: Form(
+                    key: loginProvider.formKey,
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          // onChanged: loginProvider.moveEyeBall,
+                          // onTap: loginProvider.isCheckField,
+                          controller: loginProvider.emailController,
+                          style: const TextStyle(fontSize: 15),
+                          cursorColor: Colors.deepOrange,
+                          keyboardType: TextInputType.emailAddress,
+                          textInputAction: TextInputAction.next,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(
+                              Icons.mail_rounded,
+                              color: Colors.deepOrange,
                             ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return "Please enter a valid password";
-                              }
-                              return null;
-                            },
+                            hintText: "Email",
+                            hintStyle: GoogleFonts.quicksand(
+                              fontWeight: FontWeight.w500,
+                            ),
+                            filled: true,
+                            fillColor: Colors.grey[200],
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            focusColor: Colors.deepOrange,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.deepOrange,
+                              ),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
                           ),
-                          const SizedBox(height: 25),
-                          Container(
-                            height: 50,
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.teal,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please enter a valid email";
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        TextFormField(
+                          controller: loginProvider.passwordController,
+                          obscureText: !loginProvider.isPasswordVisible,
+                          style: const TextStyle(fontSize: 15),
+                          cursorColor: Colors.deepOrange,
+                          textInputAction: TextInputAction.done,
+
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(
+                              Iconsax.lock,
+                              color: Colors.deepOrange,
                             ),
-                            child: InkWell(
-                              onTap:
+                            hintText: "Password",
+                            hintStyle: GoogleFonts.quicksand(
+                              fontWeight: FontWeight.w500,
+                            ),
+                            filled: true,
+                            fillColor: Colors.grey[200],
+                            suffixIcon: IconButton(
+                              onPressed:
+                                  loginProvider.togglePasswordVisibility,
+                              icon:
+                                  loginProvider.isPasswordVisible
+                                      ? const Icon(Iconsax.eye)
+                                      : const Icon(Iconsax.eye_slash),
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            focusColor: Colors.deepOrange,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.deepOrange,
+                              ),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please enter a valid password";
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(height: 25),
+                        Container(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.deepOrange,
+                          ),
+                          child: InkWell(
+                            onTap:
+                                loginProvider.isLoading
+                                    ? null
+                                    : () => loginProvider.signInWithEmail(
+                                      context,
+                                    ),
+                            child: Center(
+                              child:
                                   loginProvider.isLoading
-                                      ? null
-                                      : () => loginProvider.signInWithEmail(
-                                        context,
-                                      ),
-                              child: Center(
-                                child:
-                                    loginProvider.isLoading
-                                        ? const SizedBox(
-                                          height: 25,
-                                          width: 25,
-                                          child: CircularProgressIndicator(
-                                            color: Colors.white,
-                                            strokeWidth: 3,
-                                          ),
-                                        )
-                                        : Text(
-                                          "Login",
-                                          style: GoogleFonts.quicksand(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18,
-                                            color: Colors.white,
-                                          ),
+                                      ? const SizedBox(
+                                        height: 25,
+                                        width: 25,
+                                        child: CircularProgressIndicator(
+                                          color: Colors.white,
+                                          strokeWidth: 3,
                                         ),
-                              ),
+                                      )
+                                      : Text(
+                                        "Login",
+                                        style: GoogleFonts.quicksand(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: Colors.white,
+                                        ),
+                                      ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -200,7 +180,7 @@ class RiveLoginPage extends StatelessWidget {
                       "Sign Up",
                       style: GoogleFonts.quicksand(
                         fontSize: 16,
-                        color: Colors.teal,
+                        color: Colors.deepOrange,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

@@ -3,30 +3,28 @@ import 'package:ecommerce/providers/category_product_provider.dart';
 import 'package:ecommerce/providers/product_provider.dart';
 import 'package:ecommerce/views/cart_page.dart';
 import 'package:ecommerce/views/home_page.dart';
-import 'package:ecommerce/views/pet_shop_location.dart';
 import 'package:ecommerce/views/profile_page.dart';
 import 'package:ecommerce/views/wish_list_page.dart';
 import 'package:ecommerce/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class PetFoodAccessoriesApp extends StatefulWidget {
-  const PetFoodAccessoriesApp({super.key});
+class EzzyShopSpp extends StatefulWidget {
+  const EzzyShopSpp({super.key});
 
   static final List<Widget> pages = [
     const HomePage(),
     WishListPage(),
-    PetShopLocation(),
     CartPage(),
     ProfilePage(),
     // RiveLoginPage(),
   ];
 
   @override
-  State<PetFoodAccessoriesApp> createState() => _PetFoodAccessoriesAppState();
+  State<EzzyShopSpp> createState() => _EzzyShopSppState();
 }
 
-class _PetFoodAccessoriesAppState extends State<PetFoodAccessoriesApp> {
+class _EzzyShopSppState extends State<EzzyShopSpp> {
   @override
   void initState() {
     super.initState();
@@ -44,7 +42,7 @@ class _PetFoodAccessoriesAppState extends State<PetFoodAccessoriesApp> {
     return Scaffold(
       body: IndexedStack(
         index: bottomNavProvider.selectedIndex,
-        children: PetFoodAccessoriesApp.pages,
+        children: EzzyShopSpp.pages,
       ),
       bottomNavigationBar: HBottomNavBar(
         selectedIndex: bottomNavProvider.selectedIndex,

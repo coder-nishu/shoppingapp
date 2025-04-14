@@ -12,7 +12,7 @@ class CheckoutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController promoCode = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: const AppBarText(title: 'Checkout'),
@@ -56,7 +56,7 @@ class CheckoutPage extends StatelessWidget {
                           vertical: 2,
                         ),
                         decoration: BoxDecoration(
-                          // color: Colors.teal[100],
+                          // color: Colors.deepOrange[100],
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: Colors.grey, width: 1),
                         ),
@@ -65,7 +65,7 @@ class CheckoutPage extends StatelessWidget {
                           style: GoogleFonts.quicksand(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: Colors.teal,
+                            color: Colors.deepOrange,
                           ),
                         ),
                       ),
@@ -96,76 +96,11 @@ class CheckoutPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        height: MediaQuery.of(context).size.height * 0.2,
+        height: MediaQuery.of(context).size.height * 0.15,
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              children: [
-                Flexible(
-                  flex: 2,
-                  child: TextFormField(
-                    controller: promoCode,
-                    style: const TextStyle(fontSize: 15),
-                    cursorColor: Colors.teal,
-                    keyboardType: TextInputType.emailAddress,
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
-                      prefixIcon: const Icon(
-                        Iconsax.code_circle,
-                        color: Colors.teal,
-                      ),
-                      hintText: "Enter promo code",
-                      hintStyle: GoogleFonts.quicksand(
-                        fontWeight: FontWeight.w500,
-                      ),
-                      filled: true,
-                      fillColor: Colors.grey[200],
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      focusColor: Colors.teal,
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.teal),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Please enter a valid promo code";
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Flexible(
-                  child: InkWell(
-                    child: Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(32),
-                        border: Border.all(color: Colors.teal, width: 1),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Apply',
-                            style: GoogleFonts.quicksand(
-                              color: Colors.teal,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
             HAnimatedButton(),
           ],
         ),

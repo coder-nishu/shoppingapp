@@ -1,7 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:ecommerce/providers/all_product_provider.dart';
 import 'package:ecommerce/providers/bottom_nav_provider.dart';
-import 'package:ecommerce/providers/carousel_provider.dart';
 import 'package:ecommerce/providers/cart_provider.dart';
 import 'package:ecommerce/providers/category_product_provider.dart';
 import 'package:ecommerce/providers/login_provider.dart';
@@ -20,7 +19,7 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    name: 'PawMartHafiz',
+    name: 'EzzyShop',
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
@@ -32,7 +31,6 @@ void main() async {
         ChangeNotifierProvider(create: (_) => SignUpProvider()),
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => CartProvider()),
-        ChangeNotifierProvider(create: (_) => CarouselProvider()),
         ChangeNotifierProvider(create: (_) => ProductProvider()),
         ChangeNotifierProvider(create: (_) => CategoryProductProvider()),
         ChangeNotifierProvider(create: (_) => AllProductProvider()),
@@ -63,7 +61,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pet Food & Accessories App',
-      home: const PetFoodAccessoriesApp(),
+      home: const EzzyShopSpp(),
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

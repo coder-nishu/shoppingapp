@@ -124,7 +124,7 @@ class WishListPage extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(
-            child: CircularProgressIndicator(color: Colors.teal),
+            child: CircularProgressIndicator(color: Colors.deepOrange),
           );
         } else if (snapshot.hasError) {
           return Center(
@@ -133,7 +133,7 @@ class WishListPage extends StatelessWidget {
               style: GoogleFonts.quicksand(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
-                color: Colors.red[400],
+                color: Colors.red[100],
               ),
             ),
           );

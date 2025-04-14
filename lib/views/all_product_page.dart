@@ -37,7 +37,7 @@ class _AllProductPageState extends State<AllProductPage> {
       body:
           provider.isLoading
               ? const Center(
-                child: CircularProgressIndicator(color: Colors.teal),
+                child: CircularProgressIndicator(color: Colors.deepOrange),
               )
               : GridView.builder(
                 padding: const EdgeInsets.all(16),
