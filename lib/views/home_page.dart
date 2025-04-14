@@ -31,9 +31,10 @@ class _HomePageState extends State<HomePage> {
             spacing: 16,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HHeading(title: 'Flash Sales', isSeeAll: false),
+              HHeading(title: 'Flash Sales', isSeeAll: false,icon: Icons.flash_on,),
+
               HCarousel(),
-              HHeading(title: 'Categories', isSeeAll: false),
+              HHeading(title: 'Categories',icon: Icons.category, isSeeAll: false),
               const HCategory(),
               HHeading(
                 title: 'Flash Sales',
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
               ),
               bestSellers.isEmpty
                   ? const Center(
-                    child: CircularProgressIndicator(color: Colors.teal),
+                    child: CircularProgressIndicator(color: Colors.deepOrange),
                   )
                   : GridView.builder(
                     physics: const NeverScrollableScrollPhysics(),
