@@ -6,8 +6,8 @@ import 'package:provider/provider.dart';
 import '../providers/signup_provider.dart';
 import '../widgets/appbar_text.dart';
 
-class RiveSignUpPage extends StatelessWidget {
-  const RiveSignUpPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {

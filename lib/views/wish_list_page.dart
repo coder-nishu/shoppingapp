@@ -88,7 +88,7 @@ class WishListPage extends StatelessWidget {
   WishListPage({super.key});
 
   // Sample demo products
-  final List<Product> demoProducts = [
+  final List<Product> wishListProducts = [
     Product(
       id: '1',
       name: 'FeatherFuel Bird Food',
@@ -96,7 +96,7 @@ class WishListPage extends StatelessWidget {
       price: 5,
       category: 'bird food',
       imageUrl: [
-        'https://github.com/hafizflow/PawMartAssets/blob/main/Assets/bird1.png?raw=true',
+        'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         'https://github.com/hafizflow/PawMartAssets/blob/main/Assets/bird2.png?raw=true',
       ],
       rating: 4.4,
@@ -149,7 +149,7 @@ class WishListPage extends StatelessWidget {
               child: GridView.builder(
                 shrinkWrap: true,
                 padding: const EdgeInsets.only(bottom: 16),
-                itemCount: demoProducts.length,
+                itemCount: wishListProducts.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 24,
@@ -157,7 +157,7 @@ class WishListPage extends StatelessWidget {
                   mainAxisExtent: 260,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  final product = demoProducts[index];
+                  final product = wishListProducts[index];
                   return InkWell(
                     child: ProductCard(product: product),
                     onTap: () {

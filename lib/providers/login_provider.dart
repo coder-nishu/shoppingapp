@@ -87,29 +87,17 @@ class LoginProvider extends ChangeNotifier {
       isLoading = true;
       notifyListeners();
 
-      // isChecking?.change(true);
-      // isHandsUp?.change(false);
-      // trigSuccess?.change(false);
-      // trigFail?.change(false);
-
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
 
-      // Trigger success animation
-      // trigSuccess?.change(true);
-
-      // Show success toast
       showToast(
         context,
         "Login Successful",
         'Congratulations! You have successfully logged in.',
         ToastificationType.success,
       );
-
-      // Wait for 1 second to let the animation play
-      await Future.delayed(const Duration(seconds: 1));
 
       // Then navigate to home
       Navigator.pushNamedAndRemoveUntil(

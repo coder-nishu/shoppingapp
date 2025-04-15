@@ -20,15 +20,9 @@ class HBottomNavBar extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 0),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
-        color: backgroundColor2.withValues(alpha: 0.8),
+        color: backgroundColor2.withValues(alpha: 0.99),
+        // color: Colors.amber,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.deepOrange,
-            offset: Offset(0, 20),
-            blurRadius: 20,
-          ),
-        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,7 +51,7 @@ class HBottomNavBar extends StatelessWidget {
         child: Icon(
           icon,
           size: 26,
-          color: isSelected ? Colors.indigo : Colors.white70,
+          color: isSelected ? Colors.grey : Colors.white70,
         ),
       ),
     );

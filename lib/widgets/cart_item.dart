@@ -123,7 +123,7 @@ class CartItem extends StatelessWidget {
           ),
         ),
         Text(
-          "Dog Food",
+          "Watch",
           style: GoogleFonts.quicksand(
             fontSize: 14,
             fontWeight: FontWeight.w600,

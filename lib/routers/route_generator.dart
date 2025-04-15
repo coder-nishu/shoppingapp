@@ -13,7 +13,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) =>  HomePage());
 
       case '/product_detail':
         Product product = settings.arguments as Product;
@@ -22,10 +22,10 @@ class RouteGenerator {
         );
 
       case '/signup':
-        return MaterialPageRoute(builder: (_) => const RiveSignUpPage());
+        return MaterialPageRoute(builder: (_) => const SignUpPage());
 
       case '/login':
-        return MaterialPageRoute(builder: (_) => const RiveLoginPage());
+        return MaterialPageRoute(builder: (_) => const LoginPage());
 
       case '/checkout':
         return MaterialPageRoute(builder: (_) => const CheckoutPage());

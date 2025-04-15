@@ -2,40 +2,49 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../model/product_model.dart';
 import '../routers/app_routers.dart';
-import '../services/product_service.dart';
 import '../widgets/prduct_card.dart';
 
 class CategoryProductsPage extends StatelessWidget {
   final String category;
-  const CategoryProductsPage({super.key, required this.category});
+  CategoryProductsPage({super.key, required this.category});
+  final List<Product> demoProducts = [
+    Product(
+      id: '3001',
+      name: 'FeatherFuel Bird Food',
+      description: 'A healthy blend for small birds.',
+      price: 5,
+      category: 'bird food',
+      imageUrl: [
+        'https://github.com/hafizflow/PawMartAssets/blob/main/Assets/bird1.png?raw=true',
+        'https://github.com/hafizflow/PawMartAssets/blob/main/Assets/bird2.png?raw=true',
+      ],
+      rating: 4.4,
+      isFavorite: true,
+    ),
+    Product(
+      id: '3002',
+      name: 'AquaBites Fish Food',
+      description: 'Pellets for tropical fish.',
+      price: 4,
+      category: 'fish food',
+      imageUrl: [
+        'https://github.com/hafizflow/PawMartAssets/blob/main/Assets/fish1.png?raw=true',
+        'https://github.com/hafizflow/PawMartAssets/blob/main/Assets/fish2.png?raw=true',
+      ],
+      rating: 4.3,
+      isFavorite: true,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('$category Products')),
-      body: FutureBuilder<List<Product>>(
-        future: ProductService().getProductsByCategory(category.toLowerCase()),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(color: Colors.deepOrange),
-            );
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(
-              child: Text(
-                'No products found.',
-                style: GoogleFonts.quicksand(fontSize: 18),
-              ),
-            );
-          }
-
-          final products = snapshot.data!;
-          return Padding(
+      body:
+           Padding(
             padding: const EdgeInsets.all(16),
             child: GridView.builder(
-              itemCount: products.length,
+              itemCount: demoProducts.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 24,
@@ -48,15 +57,13 @@ class CategoryProductsPage extends StatelessWidget {
                     Navigator.pushNamed(
                       context,
                       AppRoutes.productDetail,
-                      arguments: products[index],
+                      arguments: demoProducts[index],
                     );
                   },
-                  child: ProductCard(product: products[index]),
+                  child: ProductCard(product: demoProducts[index]),
                 );
               },
             ),
-          );
-        },
       ),
     );
   }

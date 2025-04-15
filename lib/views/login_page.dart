@@ -6,8 +6,8 @@ import '../providers/login_provider.dart';
 import '../routers/app_routers.dart';
 import '../widgets/appbar_text.dart';
 
-class RiveLoginPage extends StatelessWidget {
-  const RiveLoginPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,6 @@ class RiveLoginPage extends StatelessWidget {
                 height: 300,
                 child:
                 Image.asset("assets/logo.jpg",fit: BoxFit.contain),
-
               ),
               Container(
                 alignment: Alignment.center,
@@ -38,8 +37,6 @@ class RiveLoginPage extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
-                          // onChanged: loginProvider.moveEyeBall,
-                          // onTap: loginProvider.isCheckField,
                           controller: loginProvider.emailController,
                           style: const TextStyle(fontSize: 15),
                           cursorColor: Colors.deepOrange,
