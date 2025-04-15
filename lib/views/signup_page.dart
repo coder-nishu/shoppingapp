@@ -25,6 +25,7 @@ class SignUpPage extends StatelessWidget {
             children: [
               SizedBox(
                 height: 300,
+                width: MediaQuery.of(context).size.width*0.80,
                 child:
                   Image.asset("assets/logo.jpg")
               ),

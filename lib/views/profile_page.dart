@@ -286,10 +286,10 @@ class ProfilePage extends StatelessWidget {
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
                                 ),
-                                focusColor: Colors.teal,
+                                focusColor: Colors.deepOrange,
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
-                                    color: Colors.teal,
+                                    color: Colors.deepOrange,
                                   ),
                                   borderRadius: BorderRadius.circular(15),
                                 ),

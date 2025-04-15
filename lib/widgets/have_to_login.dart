@@ -15,7 +15,7 @@ class HaveToLogin extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 250, child: Lottie.asset('assets/cat.json')),
+          SizedBox(height: 250, child: Lottie.asset('assets/lady.json')),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -36,7 +36,7 @@ class HaveToLogin extends StatelessWidget {
                   style: GoogleFonts.quicksand(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.teal,
+                    color: Colors.deepOrange,
                   ),
                 ),
               ),
@@ -69,7 +69,7 @@ class HaveToLogin extends StatelessWidget {
                   'Sign Up',
                   style: GoogleFonts.quicksand(
                     fontSize: 18,
-                    color: Colors.teal,
+                    color: Colors.deepOrange,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
