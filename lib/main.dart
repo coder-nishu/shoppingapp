@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pet Food & Accessories App',
+      title: 'Ecommerce EzzyBuy',
       home: const EzzyShopSpp(),
       onGenerateRoute: RouteGenerator.generateRoute,
     );
